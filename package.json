@@ -1,0 +1,19 @@
+{
+  "name": "liripackage",
+  "version": "1.0.0",
+  "description": "package for the liri bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MondoBiscuit/liri-node-app.git"
+  },
+  "author": "Brad",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MondoBiscuit/liri-node-app/issues"
+  },
+  "homepage": "https://github.com/MondoBiscuit/liri-node-app#readme"
+}
