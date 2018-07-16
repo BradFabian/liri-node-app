@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/MondoBiscuit/liri-node-app/issues"
   },
-  "homepage": "https://github.com/MondoBiscuit/liri-node-app#readme"
+  "homepage": "https://github.com/MondoBiscuit/liri-node-app#readme",
+  "dependencies": {
+    "dotenv": "^6.0.0",
+    "node-spotify-api": "^1.0.7",
+    "twitter": "^1.7.1"
+  }
 }
