@@ -28,7 +28,7 @@ switch(command){
   if(x){
     spotifySong(x);
   } else{
-    spotifySong("Fluorescent Adolescent");
+    spotifySong("The Sign");
   }
   break;
 
@@ -88,7 +88,7 @@ function spotifySong(song){
         //adds text to log.txt
       /* fs.appendFile('log.txt', songData.artists[0].name, data, error);
         fs.appendFile('log.txt', songData.name, data, error);
-        fs.appendFile('log.txt', songData.preview_url, data,error);
+        fs.appendFile('log.txt', songData.preview_url, data, error);
         fs.appendFile('log.txt', songData.album.name, data, error);
         fs.appendFile('log.txt', "-----------------------", data, error);*/
       }
