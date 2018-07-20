@@ -1,4 +1,5 @@
 require('dotenv').config()
+var fs = require('fs');
 var keys = require("./keys.js");
 //console.log(keys)//
 var Twitter = require('twitter');
@@ -6,7 +7,7 @@ var Spotify = require('node-spotify-api');
 var request = require('request');
 var spotify = new Spotify(keys.spotify);
 var client = new Twitter(keys.twitter);
-var fs = require('fs');
+
 //stored info vars//
 var command = process.argv[2]
 var nodeArgv = process.argv;
@@ -32,11 +33,18 @@ switch(command){
   break;
 
   case "movie-this":
-  movie();
+  if(x){
+    movieData(x)
+  } else{
+    movieData("Mr. Nobody")
+  }
   break;
 
   case "do-what-it-says":
   sayWhat();
+  break;
+  default:
+    console.log("{Please enter a command: my-tweets, spotify-this-song, movie-this, do-what-it-says}");
   break;
 }
 function showTweets(){
@@ -78,19 +86,19 @@ function spotifySong(song){
         console.log("-----------------------");
         
         //adds text to log.txt
-        fs.appendFile('log.txt', songData.artists[0].name);
+      /*  fs.appendFile('log.txt', songData.artists[0].name);
         fs.appendFile('log.txt', songData.name);
         fs.appendFile('log.txt', songData.preview_url);
         fs.appendFile('log.txt', songData.album.name);
-        fs.appendFile('log.txt', "-----------------------");
+        fs.appendFile('log.txt', "-----------------------");*/
       }
     } else{
       console.log('Error occurred.');
     }
   });
 }
-function movie(movieData){
-  var omdbURL = 'http://www.omdbapi.com/?t=' + movieData + '&plot=short&tomatoes=true';
+function movieData(movie){
+  var omdbURL = 'http://www.omdbapi.com/?t=' + movie + '&plot=short&tomatoes=true';
 
   request(omdbURL, function (error, response, body){
     if(!error && response.statusCode == 200){
@@ -107,7 +115,7 @@ function movie(movieData){
       console.log("Rotten Tomatoes URL: " + body.tomatoURL);
 
       //adds text to log.txt
-      fs.appendFile('log.txt', "Title: " + body.Title);
+    /*  fs.appendFile('log.txt', "Title: " + body.Title);
       fs.appendFile('log.txt', "Release Year: " + body.Year);
       fs.appendFile('log.txt', "IMdB Rating: " + body.imdbRating);
       fs.appendFile('log.txt', "Country: " + body.Country);
@@ -115,24 +123,24 @@ function movie(movieData){
       fs.appendFile('log.txt', "Plot: " + body.Plot);
       fs.appendFile('log.txt', "Actors: " + body.Actors);
       fs.appendFile('log.txt', "Rotten Tomatoes Rating: " + body.tomatoRating);
-      fs.appendFile('log.txt', "Rotten Tomatoes URL: " + body.tomatoURL);
+      fs.appendFile('log.txt', "Rotten Tomatoes URL: " + body.tomatoURL);*/
 
     } else{
       console.log('Error occurred.')
     }
-    if(movieData === "Mr. Nobody"){
+    if(movie === "Mr. Nobody"){
       console.log("-----------------------");
       console.log("If you haven't watched 'Mr. Nobody,' then you should: http://www.imdb.com/title/tt0485947/");
       console.log("It's on Netflix!");
 
       //adds text to log.txt
-      fs.appendFile('log.txt', "-----------------------");
+     /* fs.appendFile('log.txt', "-----------------------");
       fs.appendFile('log.txt', "If you haven't watched 'Mr. Nobody,' then you should: http://www.imdb.com/title/tt0485947/");
-      fs.appendFile('log.txt', "It's on Netflix!");
+      fs.appendFile('log.txt', "It's on Netflix!");*/
     }
   });
-}
 
+}
 function sayWhat(){
   fs.readFile('random.txt', "utf8", function(error, data){
     var txt = data.split(',');
