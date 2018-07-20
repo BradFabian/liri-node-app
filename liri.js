@@ -98,7 +98,7 @@ function spotifySong(song){
   });
 }
 function movieData(movie){
-  var omdbURL = 'http://www.omdbapi.com/?t=' + movie + '&plot=short&tomatoes=true';
+  var omdbURL = 'http://www.omdbapi.com/?apikey=trilogy&t=' + movie + '&plot=short&tomatoes=true';
 
   request(omdbURL, function (error, response, body){
     if(!error && response.statusCode == 200){
