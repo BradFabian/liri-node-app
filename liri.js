@@ -86,11 +86,11 @@ function spotifySong(song){
         console.log("-----------------------");
         
         //adds text to log.txt
-      /*  fs.appendFile('log.txt', songData.artists[0].name);
-        fs.appendFile('log.txt', songData.name);
-        fs.appendFile('log.txt', songData.preview_url);
-        fs.appendFile('log.txt', songData.album.name);
-        fs.appendFile('log.txt', "-----------------------");*/
+      /* fs.appendFile('log.txt', songData.artists[0].name, data, error);
+        fs.appendFile('log.txt', songData.name, data, error);
+        fs.appendFile('log.txt', songData.preview_url, data,error);
+        fs.appendFile('log.txt', songData.album.name, data, error);
+        fs.appendFile('log.txt', "-----------------------", data, error);*/
       }
     } else{
       console.log('Error occurred.');
