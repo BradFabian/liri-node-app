@@ -59,7 +59,7 @@ client.get('statuses/user_timeline', params, function(error, tweets, response) {
       console.log("------");
     } 
   } else {
-    console.log("error:" + err);
+    console.log("error:" + error);
     return;
 };
 
@@ -86,10 +86,11 @@ function spotifySong(song){
         console.log("-----------------------");
         
         //adds text to log.txt
-      /* fs.appendFile('log.txt', songData.artists[0].name, data, error);
+       /*fs.appendFile('log.txt', songData.artists[0].name, data, error);
         fs.appendFile('log.txt', songData.name, data, error);
         fs.appendFile('log.txt', songData.preview_url, data, error);
         fs.appendFile('log.txt', songData.album.name, data, error);
+
         fs.appendFile('log.txt', "-----------------------", data, error);*/
       }
     } else{
